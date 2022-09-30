@@ -1,4 +1,4 @@
-module github.com/pkl-min-1/discusspedia
+module github.com/pkl-min-1/discusspedia/backend
 
 go 1.17
 

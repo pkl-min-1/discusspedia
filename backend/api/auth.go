@@ -14,7 +14,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
 	"github.com/golang-jwt/jwt/v4"
-	"github.com/pkl-min-1/discusspedia/helper"
+	"github.com/pkl-min-1/discusspedia/backend/helper"
 )
 
 type LoginReqBody struct {

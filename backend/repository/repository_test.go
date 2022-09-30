@@ -5,8 +5,8 @@ import (
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
-	"github.com/pkl-min-1/discusspedia/db/migration"
-	"github.com/pkl-min-1/discusspedia/repository"
+	"github.com/pkl-min-1/discusspedia/backend/db/migration"
+	"github.com/pkl-min-1/discusspedia/backend/repository"
 )
 
 var _ = Describe("Login Register Test", func() {

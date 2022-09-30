@@ -7,9 +7,9 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
-	"github.com/pkl-min-1/discusspedia/helper"
-	"github.com/pkl-min-1/discusspedia/repository"
-	"github.com/pkl-min-1/discusspedia/service"
+	"github.com/pkl-min-1/discusspedia/backend/helper"
+	"github.com/pkl-min-1/discusspedia/backend/repository"
+	"github.com/pkl-min-1/discusspedia/backend/service"
 )
 
 type CreateCommentRequest struct {

@@ -5,7 +5,7 @@ import (
 	"strconv"
 
 	"github.com/gin-gonic/gin"
-	"github.com/pkl-min-1/discusspedia/repository"
+	"github.com/pkl-min-1/discusspedia/backend/repository"
 )
 
 func (api API) CreatePostLike(c *gin.Context) {
