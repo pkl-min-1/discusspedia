@@ -6,6 +6,8 @@ Running on `http://localhost:8080/`
 <!-- - `POST` : `/api/logout` -->
 - `POST` : `/api/register`
 - `GET` :`/api/category`
+- `GET` : `/api/post/:id`
+- `GET` : `/api/comments`
 
 ## Need Authentication
 ### Profile
@@ -13,8 +15,9 @@ Running on `http://localhost:8080/`
 - `PUT` : `/api/profil/avatar`
 
 ### Forum Post
-- `GET, POST` : `/api/post`
+- `GET, POST, PUT` : `/api/post`
 - `POST` : `/api/post/images/:id`
+- `DELETE` : `/api/post/:id`
 
 ### Comments
 - `GET, POST, PUT` : `/api/comments`
@@ -22,3 +25,10 @@ Running on `http://localhost:8080/`
 
 ### Post Like
 - `POST, DELETE` : `/api/post/:id/likes`
+
+### Comments Like
+- `POST, DELETE` : `/api/comments/:id/likes`
+
+### Notification
+- `GET` : `/api/notifications`
+- `PUT` : `/api/notifications/read`

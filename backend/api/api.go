@@ -78,8 +78,8 @@ func NewAPI(
 	postRouter := router.Group("/api/post", AuthMiddleware())
 	{
 		postRouter.POST("/", api.createPost)
-		postRouter.POST("/images/:id", api.uploadPostImages)
 		postRouter.PUT("/", api.updatePost)
+		postRouter.POST("/images/:id", api.uploadPostImages)
 		postRouter.DELETE("/:id", api.deletePost)
 	}
 
