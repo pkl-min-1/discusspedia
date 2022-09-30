@@ -9,16 +9,16 @@ Running on `http://localhost:8080/`
 
 ## Need Authentication
 ### Profile
-- `GET` & `PATCH` : `/api/profil`
+- `GET, PATCH` : `/api/profil`
 - `PUT` : `/api/profil/avatar`
 
 ### Forum Post
-- `GET & POST` : `/api/post`
+- `GET, POST` : `/api/post`
 - `POST` : `/api/post/images/:id`
 
 ### Comments
-- `GET & POST & PUT` : `/api/comments`
+- `GET, POST, PUT` : `/api/comments`
 - `DELETE` : `/api/comments/:id`
 
 ### Post Like
-- `POST & DELETE` : `/api/post/:id/likes`
+- `POST, DELETE` : `/api/post/:id/likes`
