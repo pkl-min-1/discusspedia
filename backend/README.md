@@ -3,7 +3,6 @@
 Running on `http://localhost:8080/`
 
 - `POST` : `/api/login`
-<!-- - `POST` : `/api/logout` -->
 - `POST` : `/api/register`
 - `GET` :`/api/category`
 - `GET` : `/api/post/:id`
