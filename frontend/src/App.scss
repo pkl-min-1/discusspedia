@@ -1,0 +1,156 @@
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap');
+$Roboto: 'Roboto', sans-serif;
+// colors
+$Light: #ffffff;
+$Background: #fafafa;
+$Primary: #6f15ea;
+$Secondary: #1682fd;
+$Border: #eaeaea;
+$TitleText: #000000;
+$SubTitleText: #808080;
+
+//Resset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  font-family: $Roboto;
+  background: $Background;
+}
+
+@mixin card-style() {
+  display: flex;
+  padding: 1.5rem 2rem;
+  width: 100%;
+  background: $Light;
+  border: 1px solid $Border;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+
+@mixin info-style($color) {
+  display: flex;
+  position: relative;
+  width: 100%;
+  color: $color;
+}
+
+@mixin section-style() {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@mixin page() {
+  display: flex;
+  margin-top: 10vh;
+  margin-left: 18%;
+  padding: 3rem;
+  text-align: justify;
+  text-justify: inter-word;
+  @include breakpoint(md) {
+    padding: 1rem;
+  }
+}
+
+@mixin post-container() {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+@mixin button($bg, $color) {
+  background-color: $bg;
+  color: $color;
+  // margin-left: 1em;
+  text-decoration: none;
+  padding: 0.8rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  font-family: $Roboto;
+  border: none;
+  transition: all 0.2s ease;
+  width: 100%;
+  cursor: pointer;
+  &:hover {
+    background: darken($bg, 8%);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+  }
+  &:active {
+    background: darken($bg, 25%);
+  }
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+@mixin input() {
+  width: 100%;
+  border: 1px solid $Border;
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+  color: $TitleText;
+  background-color: $Light;
+  margin-bottom: 1rem;
+  font-family: $Roboto;
+  &:focus {
+    outline-color: $Primary;
+  }
+}
+
+// Breakpoint
+@mixin breakpoint($point) {
+  @if $point == md {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+}
+
+#confirmOverlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 100000;
+
+  #confirmBox {
+    width: 460px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -130px 0 0 -230px;
+    border-radius: 5px;
+    background-color: $Light;
+
+    h2 {
+      padding: 2rem 0 3rem;
+      text-align: center;
+    }
+
+    #confirmButtons {
+      padding: 0 0 2rem;
+      text-align: center;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+
+      button {
+        @include button($Secondary, $Light);
+        width: 30%;
+      }
+    }
+  }
+}

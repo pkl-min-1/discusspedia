@@ -1,0 +1,19 @@
+@import '../../App.scss';
+
+.detail-page {
+  @include page();
+
+  @include breakpoint(md) {
+    margin-left: 0;
+  }
+
+  .detail-container {
+    @include post-container();
+    gap: 3rem;
+
+    .comment-container {
+      @include post-container();
+      gap: 1rem;
+    }
+  }
+}

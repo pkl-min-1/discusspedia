@@ -1,0 +1,65 @@
+@import "../../App.scss";
+header {
+  border-bottom: 1px solid $Border;
+  background-color: $Light;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  // position: fixed;
+  nav {
+    width: 100%;
+    height: 10vh;
+    padding: 0 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include breakpoint(md) {
+      padding: 0 1rem;
+      height: 8vh;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      @include breakpoint(md) {
+        display: none;
+        padding: 0 1rem;
+      }
+    }
+
+    .link {
+      display: flex;
+      .badge {
+        width: 0.8rem;
+        height: 0.8rem;
+        background-color: $Secondary;
+        border-radius: 50%;
+        margin-right: -2rem;
+        border: 0.1rem solid $Light;
+        z-index: 2;
+      }
+      .login {
+        margin-right: 1rem;
+      }
+      .user {
+        a {
+          color: $SubTitleText;
+          margin-right: 3rem;
+          @include breakpoint(md) {
+            margin-right: 1rem;
+          }
+        }
+      }
+      .notification a {
+        color: $SubTitleText;
+      }
+    }
+    .menu_icon {
+      cursor: pointer;
+      margin-top: 0.2rem;
+      display: none;
+      @include breakpoint(md) {
+        display: block;
+      }
+    }
+  }
+}
