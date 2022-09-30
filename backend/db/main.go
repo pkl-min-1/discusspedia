@@ -3,7 +3,7 @@ package main
 import (
 	"database/sql"
 
-	"github.com/rg-km/final-project-engineering-6/db/migration"
+	"github.com/pkl-min-1/discusspedia/db/migration"
 
 	_ "github.com/mattn/go-sqlite3"
 )

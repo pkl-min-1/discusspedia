@@ -1,10 +1,11 @@
 package api
 
 import (
-	"github.com/gin-gonic/gin"
-	"github.com/rg-km/final-project-engineering-6/repository"
 	"net/http"
 	"strconv"
+
+	"github.com/gin-gonic/gin"
+	"github.com/pkl-min-1/discusspedia/repository"
 )
 
 func (api API) CreatePostLike(c *gin.Context) {
