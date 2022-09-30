@@ -15,8 +15,8 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/rg-km/final-project-engineering-6/repository"
-	"github.com/rg-km/final-project-engineering-6/service"
+	"github.com/pkl-min-1/discusspedia/backend/repository"
+	"github.com/pkl-min-1/discusspedia/backend/service"
 )
 
 type CreatePostRequest struct {
