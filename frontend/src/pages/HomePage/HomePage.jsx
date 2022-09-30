@@ -16,8 +16,8 @@ const HomePage = () => {
       <div className="container">
         <div className="words">
           <div className="title">
-            <h1>Go enhance your school and college life</h1>
-            <p>Join other students around Indonesia. Do you want to ask something about school and college things? Just post it and other users will answer it.</p>
+            <h1>Tingkatkan kehidupan sekolah Anda</h1>
+            <p>Bergabunglah dengan siswa lain di seluruh Indonesia. Apakah Anda ingin menanyakan sesuatu tentang sekolah? Cukup posting dan pengguna lain akan menjawabnya.</p>
             <div className="btn">
               <Link to="/forum">
                 <Button variant="login">Open Forum</Button>
@@ -34,20 +34,18 @@ const HomePage = () => {
           <img src={Basis} alt="" />
         </div>
         <div className="explain">
-          <h2>Go post forum or place your survey link </h2>
-          <p>
-          We try to create a forum platform that students around Indonesia can use. They can ask about anything, share about anything, and expand their connections with other students.  
-          </p>
+          <h2>Buka forum posting atau tempatkan tautan survei Anda </h2>
+          <p>Kami mencoba membuat platform forum yang dapat digunakan oleh siswa di seluruh Indonesia. Mereka dapat bertanya tentang apa saja, berbagi tentang apa saja, dan memperluas koneksi mereka dengan siswa lain.</p>
           <br />
-          <p>We also provide a place that can be used for sharing survey links. By placing your survey links in BASIS, another user can fill your survey links and you don't need to find other respondents.</p>
+          <p>Kami juga menyediakan tempat yang bisa digunakan untuk berbagi link survey. Dengan menempatkan tautan survei Anda di BASIS, pengguna lain dapat mengisi tautan survei Anda dan Anda tidak perlu mencari responden lain.</p>
           <br />
-          <p>we plan to expand our features so we can provide many services that can make your school or college life easier. So stay tuned.</p>
+          <p>kami berencana untuk memperluas fitur kami sehingga kami dapat menyediakan banyak layanan yang dapat membuat kehidupan sekolah atau kampus Anda lebih mudah. Jadi tetap disini.</p>
         </div>
       </div>
       <div className="fitur">
         <div className="text-fitur">
-          <h1>Our Service</h1>
-          <p>We make it easy for users to use our platform</p>
+          <h1>Layanan kami</h1>
+          <p>Kami memudahkan pengguna untuk menggunakan platform kami</p>
         </div>
         <div className="fitur-wrapper">
           <div className="card">
