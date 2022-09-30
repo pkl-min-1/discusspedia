@@ -18,7 +18,7 @@ import Tooltip from '@mui/material/Tooltip';
 import Logout from '@mui/icons-material/Logout';
 import FotoProfile from '../../images/img-profile.jpg';
 
-import Logo from '../../images/logo.svg';
+import Logo from '../../images/Togamas.png';
 import { useGet } from '../../config/config';
 
 const Navbar = ({ openSidebar }) => {
@@ -55,7 +55,9 @@ const Navbar = ({ openSidebar }) => {
           </div>
           <div className='logo'>
             <Link to='/'>
-              <img src={Logo} alt='' />
+              <img src={Logo} alt='' 
+                style={{ width: '15%', height: '10%' }}
+              />
             </Link>
           </div>
           {token ? (

@@ -3,6 +3,7 @@ import "../../App.scss";
 import "./HomePage.scss";
 import Banner from "../../images/banner.svg";
 import Basis from "../../images/basis.svg";
+import Logo from "../../images/Togamas.png";
 import Button from "../../components/Button/Button";
 import Post from "../../images/post.svg";
 import Survey from "../../images/survey.svg";
