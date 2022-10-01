@@ -66,7 +66,7 @@ const Login = () => {
       <div className="form-login">
         <div className="form">
           <h2>Kami merindukanmu!</h2>
-          <p>Lebih dari 150 pertanyaan menunggu saran bijak Anda!</p>
+          <p>Lebih dari 150 pertanyaan menunggu jawaban anda!</p>
 
           <form id="loginForm" onSubmit={(e) => handleSubmit(e)}>
             <div className="input-container">

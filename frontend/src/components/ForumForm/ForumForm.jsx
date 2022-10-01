@@ -132,17 +132,17 @@ const ForumForm = ({ page }) => {
 
         if (imageResult.status === 200) {
           setSucceed(true);
-          setMessage('Edit successful');
+          setMessage('Update berhasil');
           navigate('/forum');
         } else {
-          setMessage('Error in updating image');
+          setMessage('Kesalahan dalam mengunggah gambar');
           setSucceed(false);
           return;
         }
       }
 
       setSucceed(true);
-      setMessage('Edit successful');
+      setMessage('Update berhasil');
       navigate(`${page === 'forum' ? '/forum' : '/survey'}`);
     } else {
       setMessage(`Error in updating ${page === 'forum' ? 'forum' : 'survey'}`);
@@ -182,7 +182,7 @@ const ForumForm = ({ page }) => {
         </div>
         {page === 'survey' && (
           <div className='input-container'>
-            <label>Survey Link</label>
+            <label>Link Survey</label>
             <span>*</span>
             <FormInput
               type={'text'}
@@ -204,7 +204,7 @@ const ForumForm = ({ page }) => {
             value={userData.category ? userData.category : ''}
           >
             <option value='' disabled>
-              Choose a Category
+              pilih kategori
             </option>
             {getStatus &&
               categories.map((category) => {

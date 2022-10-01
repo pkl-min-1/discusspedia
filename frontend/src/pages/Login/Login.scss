@@ -47,7 +47,7 @@
           width: 100%;
           align-items: center;
           input {
-            margin-left: -12rem;
+            margin-left: -10.3rem;
             @include breakpoint(md) {
               margin: 0;
               margin-left: -10rem;
@@ -56,7 +56,7 @@
             }
           }
           p {
-            margin-left: -11rem;
+            margin-left: -10.2rem;
             font-size: 0.8rem;
             margin-top: -1rem;
             @include breakpoint(md) {
