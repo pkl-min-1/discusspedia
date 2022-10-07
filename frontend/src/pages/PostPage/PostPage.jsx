@@ -71,11 +71,11 @@ const PostPage = ({ page, type }) => {
 
   return (
     <div className='page'>
-      {page === 'survey' && (
+      {/* {page === 'survey' && (
         <div>
           <h2 className='title'>Post Survey</h2>
         </div>
-      )}
+      )} */}
       {page === 'forum' && (
         <div>
           <h2 className='title'>Post Forum</h2>
@@ -100,13 +100,13 @@ const PostPage = ({ page, type }) => {
               onChange={(e) => handleChange(e.target.value, e.target.name)}
             >
               <option value='' disabled>
-                Sort by
+                Urutkan berdasarkan
               </option>
               <option value=''>Default</option>
-              <option value='newest'>Newest</option>
-              <option value='oldest'>Oldest</option>
-              <option value='most_commented'>By Most Comments</option>
-              <option value='most_liked'>By Most Likes</option>
+              <option value='newest'>Terbaru</option>
+              <option value='oldest'>Terlama</option>
+              <option value='most_commented'>Komentar Terbanyak</option>
+              <option value='most_liked'>Like Terbanyak</option>
             </select>
             <select
               name='filter'
@@ -115,9 +115,9 @@ const PostPage = ({ page, type }) => {
               onChange={(e) => handleChange(e.target.value, e.target.name)}
             >
               <option value='' disabled>
-                Filter by Category
+                Filter Berdasarkan Kategori
               </option>
-              <option value=''>All Category</option>
+              <option value=''>Semua Kategori</option>
               {getStatus &&
                 categories.map((category) => {
                   return (
@@ -150,7 +150,7 @@ const PostPage = ({ page, type }) => {
                   <img src={NotFound} alt='' />
                 </div>
                 <div className='text'>
-                  <h1>Post not found</h1>
+                  <h1>Post tidak ditemukan</h1>
                 </div>
               </>
             ))
