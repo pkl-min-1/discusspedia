@@ -41,3 +41,13 @@ func AuthMiddleware() gin.HandlerFunc {
 
 	}
 }
+
+// func AllowOrigin (c *gin.Context) {
+// 	gin.Default().RedirectTrailingSlash = true
+
+// 	c.Header("Access-Control-Allow-Origin", "*")
+// 	c.Header("Access-Control-Allow-Methods", "GET, POST, PUT, OPTIONS, DELETE")
+// 	c.Header("Access-Control-Allow-Headers", "*")
+// 	c.Header("Access-Control-Allow-Credentials", "true")
+// 	c.Header("Content-Type", "application/json")
+// }
