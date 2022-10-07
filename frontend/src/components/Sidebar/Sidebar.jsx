@@ -2,7 +2,7 @@ import React from "react";
 import "./Sidebar.scss";
 import { MenuSidebar } from "./MenuSidebar";
 import { Link, useLocation } from "react-router-dom";
-import Logo from "../../images/Madrasah Hebat Bermartabat.png";
+import Logo from "../../images/logo_app.png";
 
 const Sidebar = ({ Sidebar }) => {
   const location = useLocation();
