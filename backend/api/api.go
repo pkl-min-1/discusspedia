@@ -33,6 +33,24 @@ func NewAPI(
 	questionnaireRepo repository.QuestionnaireRepository,
 ) API {
 	router := gin.Default()
+	router.Use(CORSMiddleware())
+
+	config := cors.DefaultConfig()
+	config.AllowAllOrigins = true
+	config.AllowCredentials = true
+	config.AddAllowHeaders("Authorization")
+	router.Use(cors.New(config))
+	router.RedirectTrailingSlash = false
+	
+	// router.Use(cors.New(cors.Config{
+	// 	AllowOrigins:     []string{"*"},
+   //  	AllowMethods:     []string{"GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"},
+   // 	AllowHeaders:     []string{"Origin", "Content-Length", "Content-Type", "Authorization"},
+   // 	ExposeHeaders:    []string{"Content-Length"},
+   //  	AllowCredentials: true,
+   //  	MaxAge: 12 * time.Hour,
+	// }))
+	
 	api := API{
 		router:            router,
 		commentRepo:       commentRepo,
@@ -43,11 +61,6 @@ func NewAPI(
 		categoryRepo:      categoryRepo,
 		questionnaireRepo: questionnaireRepo,
 	}
-	config := cors.DefaultConfig()
-	config.AllowAllOrigins = true
-	config.AllowCredentials = true
-	config.AddAllowHeaders("Authorization")
-	router.Use(cors.New(config))
 
 	// Untuk validasi request dengan mengembalikan nama dari tag json jika ada
 	if v, ok := binding.Validator.Engine().(*validator.Validate); ok {
@@ -66,10 +79,10 @@ func NewAPI(
 	router.POST("/api/register", api.register)
 	router.GET("/api/category", api.GetAllCategories)
 
-	profileRouter := router.Group("/api/profile", AuthMiddleware())
+	profileRouter := router.Group("/api/profile/", AuthMiddleware())
 	{
-		profileRouter.GET("/", api.getProfile)
-		profileRouter.PATCH("/", api.updateProfile)
+		profileRouter.GET("/get", api.getProfile)
+		profileRouter.PATCH("/patch", api.updateProfile)
 		profileRouter.PUT("/avatar", api.changeAvatar)
 	}
 
