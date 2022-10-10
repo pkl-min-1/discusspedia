@@ -6,8 +6,8 @@ import Basis from "../../images/basis.svg";
 import Logo from "../../images/logo_app.png";
 import Button from "../../components/Button/Button";
 import Post from "../../images/post.svg";
-import Survey from "../../images/survey.svg";
-import Event from "../../images/event.svg";
+// import Survey from "../../images/survey.svg";
+// import Event from "../../images/event.svg";
 import { Link } from "react-router-dom";
 
 const HomePage = () => {
@@ -20,7 +20,7 @@ const HomePage = () => {
             <p>Bergabunglah dengan siswa lain di seluruh Indonesia. Apakah Anda ingin menanyakan sesuatu tentang sekolah? Cukup posting dan pengguna lain akan menjawabnya.</p>
             <div className="btn">
               <Link to="/forum">
-                <Button variant="login">Open Forum</Button>
+                <Button variant="login">Buka Forum</Button>
               </Link>
             </div>
           </div>
@@ -49,16 +49,19 @@ const HomePage = () => {
         </div>
         <div className="fitur-wrapper">
           <div className="card">
-            <img src={Post} alt="" />
-            <h3>Post</h3>
+            <Link to="/forum">
+              <img src={Post} alt="" />
+              <h3>Post</h3>
+            </Link>
           </div>
-          <div className="card">
+          
+          {/* <div className="card">
             <img src={Survey} alt="" />
             <h3>Survey</h3>
-          </div>
+          </div> */}
         </div>
         <div className="footer">
-          <p>copyright 2022 | team Basis</p>
+          <p>copyright 2022 | Tim PKL</p>
         </div>
       </div>
     </div>

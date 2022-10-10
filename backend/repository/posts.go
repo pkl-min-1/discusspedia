@@ -34,7 +34,7 @@ type PostRepository struct {
 }
 
 var (
-	ErrPostNotFound = errors.New("Post not found")
+	ErrPostNotFound = errors.New("post not found")
 )
 
 func NewPostRepository(db *sql.DB) *PostRepository {
