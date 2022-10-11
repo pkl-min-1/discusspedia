@@ -33,7 +33,6 @@ func NewAPI(
 	questionnaireRepo repository.QuestionnaireRepository,
 ) API {
 	router := gin.Default()
-	router.Use(CORSMiddleware())
 
 	config := cors.DefaultConfig()
 	config.AllowAllOrigins = true
@@ -42,14 +41,6 @@ func NewAPI(
 	router.Use(cors.New(config))
 	router.RedirectTrailingSlash = false
 	
-	// router.Use(cors.New(cors.Config{
-	// 	AllowOrigins:     []string{"*"},
-   //  	AllowMethods:     []string{"GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"},
-   // 	AllowHeaders:     []string{"Origin", "Content-Length", "Content-Type", "Authorization"},
-   // 	ExposeHeaders:    []string{"Content-Length"},
-   //  	AllowCredentials: true,
-   //  	MaxAge: 12 * time.Hour,
-	// }))
 	
 	api := API{
 		router:            router,
@@ -79,10 +70,10 @@ func NewAPI(
 	router.POST("/api/register", api.register)
 	router.GET("/api/category", api.GetAllCategories)
 
-	profileRouter := router.Group("/api/profile/", AuthMiddleware())
+	profileRouter := router.Group("/api/profile", AuthMiddleware())
 	{
-		profileRouter.GET("/get", api.getProfile)
-		profileRouter.PATCH("/patch", api.updateProfile)
+		profileRouter.GET("", api.getProfile)
+		profileRouter.PATCH("", api.updateProfile)
 		profileRouter.PUT("/avatar", api.changeAvatar)
 	}
 
@@ -90,8 +81,8 @@ func NewAPI(
 	router.GET("/api/post/:id", api.readPost)
 	postRouter := router.Group("/api/post", AuthMiddleware())
 	{
-		postRouter.POST("/", api.createPost)
-		postRouter.PUT("/", api.updatePost)
+		postRouter.POST("", api.createPost)
+		postRouter.PUT("", api.updatePost)
 		postRouter.POST("/images/:id", api.uploadPostImages)
 		postRouter.DELETE("/:id", api.deletePost)
 	}
@@ -99,26 +90,27 @@ func NewAPI(
 	router.GET("/api/comments", api.ReadAllComment)
 	commentRoutersWithAuth := router.Group("/api/comments", AuthMiddleware())
 	{
-		commentRoutersWithAuth.POST("/", api.CreateComment)
-		commentRoutersWithAuth.PUT("/", api.UpdateComment)
+		commentRoutersWithAuth.POST("", api.CreateComment)
+		commentRoutersWithAuth.PUT("", api.UpdateComment)
 		commentRoutersWithAuth.DELETE("/:id", api.DeleteComment)
 	}
 
 	postLikeRouters := router.Group("/api/post/:id/likes", AuthMiddleware())
 	{
-		postLikeRouters.POST("/", api.CreatePostLike)
-		postLikeRouters.DELETE("/", api.DeletePostLike)
+		postLikeRouters.POST("", api.CreatePostLike)
+		postLikeRouters.DELETE("", api.DeletePostLike)
 	}
 
 	commentLikeRouters := router.Group("/api/comments/:id/likes", AuthMiddleware())
 	{
-		commentLikeRouters.POST("/", api.CreateCommentLike)
-		commentLikeRouters.DELETE("/", api.DeleteCommentLike)
+		commentLikeRouters.POST("", api.CreateCommentLike)
+		commentLikeRouters.DELETE("", api.DeleteCommentLike)
 	}
 
+	// router.GET("api/notifications", api.GetAllNotifications)
 	notifRouter := router.Group("/api/notifications", AuthMiddleware())
 	{
-		notifRouter.GET("/", api.GetAllNotifications)
+		notifRouter.GET("", api.GetAllNotifications)
 		notifRouter.PUT("/read", api.SetReadNotif)
 	}
 
