@@ -154,7 +154,7 @@ const Register = () => {
             <div className='button-container'>
               <button
                 className='btn'
-                disabled={isEmailError || isPwdError}
+                // disabled={isEmailError || isPwdError}
                 onClick={registerClick}
               >
                 Register

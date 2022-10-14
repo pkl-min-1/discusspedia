@@ -3,7 +3,7 @@ import create from 'zustand';
 import { devtools } from 'zustand/middleware';
 
 const defaultAxios = axios.create({
-  baseURL: 'http://167.172.84.216/api/',
+  baseURL: 'http://localhost:8080/',
   timeout: 5000,
 });
 
