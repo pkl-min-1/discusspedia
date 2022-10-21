@@ -180,10 +180,10 @@ const PostContent = ({ data, page, type }) => {
                 src={
                   type === 'detail'
                     ? data.author.profile_image
-                      ? `http://167.172.84.216/${data.author.profile_image}`
+                      ? `https://discusspedia.herokuapp.com/${data.author.profile_image}`
                       : Photo
                     : data.author_avatar
-                    ? `http://167.172.84.216/${data.author_avatar}`
+                    ? `https://discusspedia.herokuapp.com/${data.author_avatar}`
                     : Photo
                 }
                 alt='user'
@@ -228,7 +228,7 @@ const PostContent = ({ data, page, type }) => {
               return (
                 <img
                   key={index}
-                  src={`http://167.172.84.216/${image.url}`}
+                  src={`https://discusspedia.herokuapp.com/${image.url}`}
                   alt='Description'
                 />
               );
@@ -262,7 +262,7 @@ const PostContent = ({ data, page, type }) => {
               <img
                 src={
                   data.author.profile_image
-                    ? `http://167.172.84.216/${data.author.profile_image}`
+                    ? `https://discusspedia.herokuapp.com/${data.author.profile_image}`
                     : Photo
                 }
                 alt='user'

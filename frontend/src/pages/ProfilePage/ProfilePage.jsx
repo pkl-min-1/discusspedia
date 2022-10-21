@@ -135,7 +135,7 @@ const ProfilePage = () => {
 
   const [forumResult, forumStatus] = useGet('post?me=true', token);
 
-  const [surveyResult, surveyStatus] = useGet('questionnaires?me=true', token);
+  // const [surveyResult, surveyStatus] = useGet('questionnaires?me=true', token);
 
   useEffect(() => {
     setUserData({
@@ -166,20 +166,6 @@ const ProfilePage = () => {
             </div>
             {/* Post */}
           </TabPane>
-          <TabPane name='Survey' key='2'>
-            {/* Content of Tab Pane 2 */}
-            {surveyStatus &&
-              surveyResult.map((result) => {
-                return (
-                  <PostUser
-                    page={'survey'}
-                    type={'post'}
-                    data={result}
-                    key={result.id}
-                  />
-                );
-              })}
-          </TabPane>
         </Tabs>
       </div>
       <div className='profile'>
@@ -187,7 +173,7 @@ const ProfilePage = () => {
           <img
             src={
               profileResult.avatar
-                ? `http://167.172.84.216/${profileResult.avatar}`
+                ? `https://discusspedia.herokuapp.com/${profileResult.avatar}`
                 : FotoProfile
             }
             alt='profile'
@@ -232,7 +218,7 @@ const ProfilePage = () => {
                 <img
                   src={
                     profileResult.avatar
-                      ? `http://167.172.84.216/${profileResult.avatar}`
+                      ? `https://discusspedia.herokuapp.com/${profileResult.avatar}`
                       : FotoProfile
                   }
                   alt='Profile'
