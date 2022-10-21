@@ -16,7 +16,7 @@
       gap: 0.5rem;
 
       .content-title {
-        width: 85%;
+        width: 100%;
 
         @include breakpoint(md) {
           font-size: 1.2rem;

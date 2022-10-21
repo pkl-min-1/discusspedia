@@ -38,6 +38,7 @@ function App() {
   const type = useConfirmStore((state) => state.type);
   let navigate = useNavigate();
 
+
   const toogleSidebar = () => {
     setSidebar((prevState) => !prevState);
   };

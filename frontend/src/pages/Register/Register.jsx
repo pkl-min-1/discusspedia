@@ -59,7 +59,7 @@ const Register = () => {
     <div className='container-reg'>
       <div className='form-register'>
         <div className='form-reg'>
-          <h2>Join Basis community</h2>
+          <h2>Bergabunglah dengan komunitas</h2>
           <p>
             Get more features and priviliges by joining to the most helpful
             community

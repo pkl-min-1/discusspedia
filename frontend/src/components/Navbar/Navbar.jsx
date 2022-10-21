@@ -83,7 +83,7 @@ const Navbar = ({ openSidebar }) => {
                     <Tooltip title="Account settings">
                       <IconButton onClick={handleClick} size="small" sx={{ ml: 2 }} aria-controls={open ? "account-menu" : undefined} aria-haspopup="true" aria-expanded={open ? "true" : undefined}>
                         <img
-                          src={profileStatus ? (profileResult.avatar ? `http://167.172.84.216/${profileResult.avatar}` : FotoProfile) : FotoProfile}
+                          src={profileStatus ? (profileResult.avatar ? `https://discusspedia.herokuapp.com/${profileResult.avatar}` : FotoProfile) : FotoProfile}
                           alt="profile"
                           style={{
                             width: "32px",
