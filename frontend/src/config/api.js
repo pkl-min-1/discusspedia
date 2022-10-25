@@ -3,7 +3,7 @@ import create from "zustand";
 import { devtools } from "zustand/middleware";
 
 const defaultAxios = axios.create({
-    baseURL: "https://discusspedia.herokuapp.com/api",
+    baseURL: "https://api-discusspedia.herokuapp.com/api",
     timeout: 5000,
 });
 
