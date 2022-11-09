@@ -4,6 +4,7 @@ import Btn from "../../components/Button/Button";
 import FormInput from "../../components/FormInput/FormInput";
 import FotoProfile from "../../images/img-profile.jpg";
 import PostUser from "../PostUser/PostUser";
+import PostContent from "../../components/Post Content/PostContent";
 import "./ProfilePage.scss";
 
 import TabPane from "../../components/Tabs/TabPane";
@@ -73,6 +74,8 @@ const ProfilePage = () => {
     const setShow = useAlertStore((state) => state.setShow);
     const setSucceed = useAlertStore((state) => state.setSucceed);
     const setMessage = useAlertStore((state) => state.setMessage);
+    const [ totalLike, setTotalLike ] = useState();
+    const [ totalComment, setTotalComment ] = useState();
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -105,7 +108,6 @@ const ProfilePage = () => {
             },
             token
         );
-
         setShow(true);
         if (result.status === 200) {
             if (userData.image) {
@@ -135,6 +137,19 @@ const ProfilePage = () => {
 
     const [forumResult, forumStatus] = useGet("post?me=true", token);
 
+    useEffect(() => {
+        let like_Total = 0;
+        let comment_Total = 0;
+        if(forumResult) {
+            for(let i = 0; i < forumResult.length; ++i) {
+                like_Total += forumResult[i].like_count;
+                comment_Total += forumResult[i].comment_count;
+            }
+        }
+        setTotalLike(like_Total);
+        setTotalComment(comment_Total);
+    }, [forumResult]);
+
     // const [surveyResult, surveyStatus] = useGet('questionnaires?me=true', token);
 
     useEffect(() => {
@@ -162,6 +177,13 @@ const ProfilePage = () => {
                 </Tabs>
             </div>
             <div className="profile">
+                    <div className="like-count">
+                        <h3>Like Total: {totalLike}</h3>
+                    </div>
+                <div className="comment-count">
+                    <h3>Comment Total: {totalComment}</h3>
+                </div>
+                
                 <div className="profile-image">
                     <img src={profileResult.avatar ? `https://api-discusspedia.herokuapp.com/${profileResult.avatar}` : FotoProfile} alt="profile" />
                 </div>

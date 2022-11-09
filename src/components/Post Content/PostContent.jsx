@@ -162,6 +162,9 @@ const PostContent = ({ data, page, type }) => {
                 {type === "comment" && console.log(data)}
                 {type !== "post" && (
                     <div className="user-section">
+                        <div className="user-title">
+                            <h2>User</h2>
+                        </div>
                         <div className="user-avatar">
                             <img
                                 src={
@@ -196,6 +199,7 @@ const PostContent = ({ data, page, type }) => {
                             <div className="content-info">{date}</div>
                         </>
                     )}
+                    <hr></hr>
                     <p className="content-description">{type === "comment" || type === "reply" ? data.comment : data.description}</p>
                     {type === "detail" &&
                         page === "forum" &&

@@ -20,6 +20,9 @@ const DetailPage = ({ page, type }) => {
   return (
     <div className='detail-page'>
       <div className='detail-container'>
+        <div className="author-title">
+          <h2>Author</h2>
+        </div>
         {status && <PostCard data={result} page={page} type={type} />}
         <div className='comment-container'>
           {commentStatus &&

@@ -49,6 +49,7 @@
     }
 
     .user-section {
+
       @include section-style();
       gap: 1rem;
       font-size: 0.9rem;

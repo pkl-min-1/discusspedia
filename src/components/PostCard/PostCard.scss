@@ -40,9 +40,11 @@ a {
   }
 
   .reply {
+    padding: 30px;
     width: 90%;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    background: $ReplyBG;
   }
 }
